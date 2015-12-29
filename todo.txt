@@ -1,0 +1,8 @@
+== Goal == 
+List todos.  Be able to add them and mark them complete with react
+
+x List todos with react
+- Add a todo and refresh list
+  - Add a link that displays a 'new todo' component
+- Mark them as complete and dissapear them
+- Add undo functionality
