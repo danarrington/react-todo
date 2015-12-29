@@ -1,11 +1,28 @@
 var NewTodoContainer = React.createClass({
 
+  getInitialState() {
+    return { showForm: false};
+  },
+
   toggleDisplay() {
-    alert('hiding');
+    this.setState({showForm: !this.state.showForm});
+  },
+
+  saveTodo(value) {
+    $.post(
+      this.props.todosPath,
+      (data) = {title: value}
+    );
+    this.toggleDisplay();
+    this.props.todosContainer.fetchTodos();
   },
 
   render() {
-    return <NewTodo container={this} />
+    return (
+      <div>
+      {this.state.showForm ? <NewTodoForm container={this}/> : <NewTodo container={this} />}
+      </div>
+    );
   }
 
   

@@ -1,7 +1,7 @@
 var TodosContainer = React.createClass({
   componentWillMount() {
     this.fetchTodos();
-    setInterval(this.fetchTodos, 1000);
+    //setInterval(this.fetchTodos, 1000);
   },
 
   fetchTodos() {
@@ -19,7 +19,7 @@ var TodosContainer = React.createClass({
     return (
       <div>
         <Todos todos={this.state.todos} />
-        <NewTodoContainer />
+        <NewTodoContainer todosPath={this.props.todosPath} todosContainer={this} />
       </div>
     );
   }
