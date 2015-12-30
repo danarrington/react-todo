@@ -1,7 +1,7 @@
 class TodosController < ApplicationController
 
   def index
-    @todos = Todo.all
+    @todos = Todo.where('finished is null')
 
     respond_to do |format|
       format.html #index.html.slim
@@ -14,5 +14,19 @@ class TodosController < ApplicationController
     respond_to do |format|
       format.json {head :ok}
     end
+  end
+
+  def update
+    todo = Todo.find(params[:id])
+    todo.update!(todo_params)
+
+    respond_to do |format|
+      format.json {head :ok}
+    end
+  end
+
+  private
+  def todo_params
+    params.require(:todo).permit(:finished, :title)
   end
 end

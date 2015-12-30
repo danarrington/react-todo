@@ -1,7 +1,6 @@
 var TodosContainer = React.createClass({
   componentWillMount() {
     this.fetchTodos();
-    //setInterval(this.fetchTodos, 1000);
   },
 
   fetchTodos() {
@@ -11,6 +10,17 @@ var TodosContainer = React.createClass({
     );
   },
 
+  finishTodo(e) {
+    var id = $(e.target).data('id');
+    $.ajax({
+              type: 'PUT',
+              url:  this.props.todosPath+'/'+id,
+              data: {todo:{finished:true}},
+              dataType: "text",
+              success: this.fetchTodos
+        });
+  },
+
   getInitialState() {
     return { todos: []};
   },
@@ -18,7 +28,8 @@ var TodosContainer = React.createClass({
   render() {
     return (
       <div>
-        <Todos todos={this.state.todos} />
+        <h1> Todos ({this.state.todos.length})</h1>
+        <Todos todos={this.state.todos} onFinishTodo={this.finishTodo} />
         <NewTodoContainer todosPath={this.props.todosPath} todosContainer={this} />
       </div>
     );

@@ -2,7 +2,13 @@
 List todos.  Be able to add them and mark them complete with react
 
 x List todos with react
-- Add a todo and refresh list
-  - Add a link that displays a 'new todo' component
+x Add a todo and refresh list
+  x Add a link that displays a 'new todo' component
+- Reorganize
+x Update title also
 - Mark them as complete and dissapear them
 - Add undo functionality
+
+
+TodosContainer
+  -props: todo
