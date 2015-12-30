@@ -1,12 +1,11 @@
 var Todo = React.createClass({
   render() {
     return (
-      <li>
-        <input type="checkbox" 
-          data-id={this.props.id} 
-          onClick={this.props.onFinishTodo}
-        />
-        {this.props.title}
+      <li className="todo">
+        <span className="todo-title">
+          {this.props.title}
+        </span>
+        <Checkbox id={this.props.id} onFinishTodo={this.props.onFinishTodo} />
       </li>
     );
   }

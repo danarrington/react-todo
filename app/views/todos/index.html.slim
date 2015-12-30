@@ -1,5 +1,15 @@
-= react_component "TodosContainer",
-                  todosPath: todos_path
+doctype html
+html lang="en" xml:lang="en"
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title
+      = content_for?(:title) ? yield(:title) : 'Three Sixty Five'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Three Sixty Five'}"
+  body.container
+    .row
+      .standard-col
+        = react_component "TodosContainer",
+                          todosPath: todos_path
 
 
 

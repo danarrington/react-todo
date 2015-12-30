@@ -10,9 +10,12 @@ var NewTodoForm = React.createClass({
 
   render() {
     return (
-      <div>
-        <input type="text" onChange={this.handleValueChange} />
-        <button onClick={this.saveTodo}>Create</button>
+      <div className="form-group">
+        <input type="text" className="form-control" 
+          placeholder="What do you need to do?"
+          onChange={this.handleValueChange} />
+        <button className="new-todo-button" 
+          onClick={this.saveTodo}>Add to List</button>
       </div>
     );
   }

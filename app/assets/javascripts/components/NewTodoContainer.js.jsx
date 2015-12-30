@@ -19,7 +19,7 @@ var NewTodoContainer = React.createClass({
 
   render() {
     return (
-      <div>
+      <div className="new-todo">
       {this.state.showForm ? <NewTodoForm container={this}/> : <NewTodo container={this} />}
       </div>
     );

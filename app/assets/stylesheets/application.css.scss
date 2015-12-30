@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+ $primary:   #EC5D59;
+ $secondary: #4A4A4A;
+
+.standard-col {
+  @extend .col-md-6;
+  @extend .col-md-offset-3;
+  padding: 0px;
+}
+
+.header {
+  height:50px;
+  text-align:center;
+  background-color: $secondary;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 5px 5px 5px;
+  vertical-align:middle;
+}
+
+ul {list-style-type:none; padding:0px;}
+
+.todo {
+  height:50px;
+  border-bottom: 1px solid $secondary;
+  padding-left: 20px;
+
+  .todo-title {
+    font-size: 20px;
+    font-weight:bold;
+    color: $secondary;
+    display: inline-block;
+    margin-top:10px;
+  }
+}
+
+.complete-box {
+  width: 49px;
+  height: 49px;
+  background-color: $primary;
+  float:right;
+  color:white;
+  font-size:28px;
+  text-align:center;
+  font-weight: bold;
+  padding-top: 5px;
+}
+
+.new-todo {
+  padding: 20px;
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    color: $secondary;
+  }
+  .new-todo-button {
+    margin-top:10px;
+    @extend .btn;
+    @extend .btn-primary;
+  }
+}

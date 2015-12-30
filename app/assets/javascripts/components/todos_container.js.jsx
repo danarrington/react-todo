@@ -28,7 +28,7 @@ var TodosContainer = React.createClass({
   render() {
     return (
       <div>
-        <h1> Todos ({this.state.todos.length})</h1>
+        <Header count={this.state.todos.length} />
         <Todos todos={this.state.todos} onFinishTodo={this.finishTodo} />
         <NewTodoContainer todosPath={this.props.todosPath} todosContainer={this} />
       </div>
