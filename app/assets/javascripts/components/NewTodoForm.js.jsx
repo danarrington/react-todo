@@ -18,6 +18,10 @@ var NewTodoForm = React.createClass({
     this.props.container.saveTodo(this.state.value);
   },
 
+  cancelTodo() {
+    this.props.container.toggleDisplay(); 
+  },
+
   render() {
     return (
 
@@ -29,6 +33,8 @@ var NewTodoForm = React.createClass({
           onKeyPress={this.inputKeyPress}/>
         <button className="new-todo-button" 
           onClick={this.saveTodo}>Add to List</button>
+        <button className="cancel-todo-button" 
+          onClick={this.cancelTodo}>Cancel</button>
       </div>
     );
   }
