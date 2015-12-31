@@ -14,7 +14,7 @@ var NewTodoContainer = React.createClass({
       (data) = {title: value}
     );
     this.toggleDisplay();
-    this.props.todosContainer.fetchTodos();
+    this.props.onTodosUpdated();
   },
 
   render() {

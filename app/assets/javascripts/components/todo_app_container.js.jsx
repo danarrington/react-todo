@@ -1,4 +1,4 @@
-var TodosContainer = React.createClass({
+var TodoAppContainer = React.createClass({
   componentWillMount() {
     this.fetchTodos();
   },
@@ -8,6 +8,10 @@ var TodosContainer = React.createClass({
       this.props.todosPath,
       (data) => this.setState({todos: data})
     );
+  },
+
+  todosUpdated() {
+    this.fetchTodos();
   },
 
   finishTodo(e) {
@@ -26,13 +30,8 @@ var TodosContainer = React.createClass({
   },
 
   render() {
-    return (
-      <div>
-        <Header count={this.state.todos.length} />
-        <Todos todos={this.state.todos} onFinishTodo={this.finishTodo} />
-        <NewTodoContainer todosPath={this.props.todosPath} todosContainer={this} />
-      </div>
-    );
+    return <TodoApp todos={this.state.todos} onFinishTodo={this.finishTodo}
+      onTodosUpdated={this.todosUpdated} />;
   }
 
 });
