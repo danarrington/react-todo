@@ -1,0 +1,19 @@
+.new-todo {
+  padding: 20px;
+  a {
+    font-size: 20px;
+    font-weight: bold;
+    color: $secondary;
+  }
+  .new-todo-button {
+    margin-top:10px;
+    @extend .btn;
+    @extend .btn-primary;
+  }
+  .cancel-todo-button {
+    margin-top:10px;
+    margin-left:10px;
+    @extend .btn;
+    @extend .btn-default;
+  }
+}

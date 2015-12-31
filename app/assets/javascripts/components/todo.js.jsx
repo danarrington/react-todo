@@ -5,7 +5,7 @@ var Todo = React.createClass({
         <span className="todo-title">
           {this.props.title}
         </span>
-        <Checkbox id={this.props.id} onFinishTodo={this.props.onFinishTodo} />
+        <CompleteBox id={this.props.id} onFinishTodo={this.props.onFinishTodo} />
       </li>
     );
   }

@@ -1,0 +1,38 @@
+ul.todo-list {
+  list-style-type: none; 
+  padding: 0px;
+
+  .todo {
+    height: 50px;
+    border-bottom: 1px solid $secondary;
+    padding-left: 20px;
+    font-weight: bold;
+
+    .todo-title {
+      width: 390px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      font-size: 20px;
+      color: $secondary;
+      display: inline-block;
+      margin-top: 10px;
+      @media(max-width:$screen-xs){ width: 290px;}
+    }
+    
+    .todo-complete-box {
+      width: 49px;
+      height: 49px;
+      background-color: $primary;
+      float:right;
+      color:white;
+      font-size:28px;
+      text-align:center;
+      padding-top: 5px;
+      cursor: pointer;
+      &:hover {
+        background-color: lighten($primary, 10%)
+      }
+    }
+  }
+}

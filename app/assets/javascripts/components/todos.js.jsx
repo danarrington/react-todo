@@ -7,6 +7,10 @@ var Todos = React.createClass({
     />; 
     //var createItem = (todo) => <div>{todo.title}</div>; 
     
-    return <ul>{this.props.todos.map(createItem)}</ul>;
+    return (
+      <ul className="todo-list">
+        {this.props.todos.map(createItem)}
+      </ul>
+    );
   }
 });

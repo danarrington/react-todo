@@ -14,79 +14,8 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
-
  $primary:   #EC5D59;
  $secondary: #4A4A4A;
+ @import "layout";
+ @import "modules/*"; /* close 'comment' to help with syntax hilighting*/
 
-.standard-col {
-  @extend .col-md-6;
-  @extend .col-md-offset-3;
-  padding: 0px;
-}
-
-.header {
-  height:50px;
-  text-align:center;
-  background-color: $secondary;
-  font-size: 20px;
-  font-weight: bold;
-  color: white;
-  padding: 10px 5px 5px 5px;
-  vertical-align:middle;
-}
-
-ul {list-style-type:none; padding:0px;}
-
-.todo {
-  height:50px;
-  border-bottom: 1px solid $secondary;
-  padding-left: 20px;
-
-  .todo-title {
-    width: 290px;
-    white-space:nowrap;
-    text-overflow:ellipsis;
-    overflow:hidden;
-    font-size: 20px;
-    font-weight:bold;
-    color: $secondary;
-    display: inline-block;
-    margin-top:10px;
-  }
-}
-
-.complete-box {
-  width: 49px;
-  height: 49px;
-  background-color: $primary;
-  float:right;
-  color:white;
-  font-size:28px;
-  text-align:center;
-  font-weight: bold;
-  padding-top: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: lighten($primary, 10%)
-  }
-}
-
-.new-todo {
-  padding: 20px;
-  a {
-    font-size: 20px;
-    font-weight: bold;
-    color: $secondary;
-  }
-  .new-todo-button {
-    margin-top:10px;
-    @extend .btn;
-    @extend .btn-primary;
-  }
-  .cancel-todo-button {
-    margin-top:10px;
-    margin-left:10px;
-    @extend .btn;
-    @extend .btn-default;
-  }
-}
