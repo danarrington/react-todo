@@ -1,28 +1,28 @@
 var NewTodoForm = React.createClass({
 
-  componentDidMount() {
+  componentDidMount: function() {
     React.findDOMNode(this.refs.titleInput).focus();
   },
 
-  handleValueChange(e) {
+  handleValueChange: function(e) {
     this.setState({value: e.target.value});
   },
 
-  inputKeyPress(e) {
+  inputKeyPress: function(e) {
     if(e.which == 13) {
       this.saveTodo();
     }
   },
 
-  saveTodo() {
+  saveTodo: function() {
     this.props.container.saveTodo(this.state.value);
   },
 
-  cancelTodo() {
+  cancelTodo: function() {
     this.props.container.toggleDisplay(); 
   },
 
-  render() {
+  render: function() {
     return (
 
       <div className="form-group">

@@ -1,10 +1,10 @@
 var NewTodo = React.createClass({
 
-  handleClick() {
+  handleClick: function() {
     alert('click');
   },
 
-  render() {
+  render: function() {
     return (
       <a href="#" onClick={this.props.container.toggleDisplay}>+ New Todo</a>
     );

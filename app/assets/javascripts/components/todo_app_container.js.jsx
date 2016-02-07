@@ -1,20 +1,20 @@
 var TodoAppContainer = React.createClass({
-  componentWillMount() {
+  componentWillMount: function() {
     this.fetchTodos();
   },
 
-  fetchTodos() {
+  fetchTodos: function() {
     $.getJSON(
       this.props.todosPath,
       (data) => this.setState({todos: data})
     );
   },
 
-  todosUpdated() {
+  todosUpdated: function() {
     this.fetchTodos();
   },
 
-  finishTodo(e) {
+  finishTodo: function(e) {
     var id = $(e.target).data('id');
     $.ajax({
               type: 'PUT',
@@ -25,11 +25,11 @@ var TodoAppContainer = React.createClass({
         });
   },
 
-  getInitialState() {
+  getInitialState: function() {
     return { todos: []};
   },
 
-  render() {
+  render: function() {
     return <TodoApp todos={this.state.todos} onFinishTodo={this.finishTodo}
       onTodosUpdated={this.todosUpdated} />;
   }

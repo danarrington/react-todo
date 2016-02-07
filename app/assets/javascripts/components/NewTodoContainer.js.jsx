@@ -1,14 +1,14 @@
 var NewTodoContainer = React.createClass({
 
-  getInitialState() {
+  getInitialState: function() {
     return { showForm: false};
   },
 
-  toggleDisplay() {
+  toggleDisplay: function() {
     this.setState({showForm: !this.state.showForm});
   },
 
-  saveTodo(value) {
+  saveTodo: function(value) {
     $.post(
       this.props.todosPath,
       (data) = {title: value}
@@ -17,7 +17,7 @@ var NewTodoContainer = React.createClass({
     this.props.onTodosUpdated();
   },
 
-  render() {
+  render: function() {
     return (
       <div className="new-todo">
         {

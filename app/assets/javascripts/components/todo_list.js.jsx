@@ -1,5 +1,5 @@
 var TodoList = React.createClass({
-  render() {
+  render: function() {
     return (
       <ul className="todo-list">
         {this.props.todos.map(this.renderTodo)}
@@ -7,7 +7,7 @@ var TodoList = React.createClass({
     );
   },
 
-  renderTodo(todo) {
+  renderTodo: function(todo) {
     return <Todo 
           title={todo.title} 
           id={todo.id}

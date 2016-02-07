@@ -1,5 +1,5 @@
 var Todo = React.createClass({
-  render() {
+  render: function() {
     return (
       <li className="todo">
         <span className="todo-title">
